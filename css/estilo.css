@@ -1,0 +1,382 @@
+/* Reset e fonte base */
+* {
+    /*font-family: 'Poppins', sans-serif;*//*Opção 2*/
+    font-family: 'Nunito', sans-serif; /*Opção 1*/
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Overlay para o efeito de fade ao recarregar a página */
+#fade-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white; /* Pode mudar para a cor do seu fundo */
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.8s ease;
+    pointer-events: none;
+}
+
+p {
+  margin: 0;
+}
+
+body {
+    margin: 0;
+    background: #a9d8f4;
+    color: #222;
+}
+
+/* Menu */
+.menu {
+    min-height: 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #0c1721;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.menu a {
+    color: #a9d8f4;
+    text-shadow:
+    0 0 5px #a9d8f4,
+    0 0 10px #a9d8f4,
+    0 0 20px #a9d8f4,
+    0 0 40px #a9d8f4;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #ff00cc;
+    text-shadow:
+    0 0 5px #ff00cc,
+    0 0 10px #ff00cc,
+    0 0 20px #ff00cc,
+    0 0 40px #ff00cc;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+.logo {
+    color: #a9d8f4;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.slogan {
+    font-size: 0.9em;
+}
+
+/* Hero */
+.hero {
+    min-height: calc(100vh - 90px);
+    scroll-margin-top: 90px;
+    text-align: center;
+    padding: 0px;
+}
+
+.hero-logo {
+    max-width: 150px;
+    margin: 3px auto 10px;
+    display: block;
+}
+
+.desc {
+    max-width: 800px;
+    margin: auto;
+    padding: 9px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.desc.aviso {
+    color: yellow; /*colocar yellow no texto e esse azul no slogan*/
+}
+
+.slogan-aviso {
+    color: #0d47a1;
+}
+
+.cta {
+    display: inline-block;
+    background: #008080;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.cta:hover {
+    background: rgba(0, 128, 128, 0.9);
+}
+
+/* Links Section */
+.links-section {
+    padding: 15px 20px;
+    background: #f5f5f5;
+    border-top: 5px solid #008080;
+}
+
+.links-section h2 {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    background-color: #a9d8f4;
+    color: #0c1721;
+}
+
+.link-card {
+    display: flex;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #0c1721;
+    color: #a9d8f4;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    align-items: center; /* garante alinhamento vertical */
+}
+
+.link-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* --- NUMERO MINIMALISTA --- */
+.link-card .numero {
+    font-size: 2em;
+    font-weight: 600;
+    background: transparent;/* sem fundo */
+    width: auto;
+    height: auto;
+    margin: 0 12px 0 12px;  /* espaço entre número e imagem */
+    border-radius: 0;
+    display: inline-block;
+    flex-shrink: 0;
+    padding: 2px 6px;       /* pequeno acolchoamento para leitura */
+    border: 1px solid rgba(0,0,0,0.06); /* linha muito discreta */
+}
+
+/* Mantém a imagem como antes */
+.link-card img {
+    width: 120px;
+    height: auto;
+}
+
+.link-card div {
+    padding: 10px;
+}
+
+.bvmt-link-card {
+    background-color: white;
+    color: black;
+}
+
+.ctaApoiarProjeto {
+    display: block;        /* ou inline-block */
+    width: max-content;    /* só ocupa o tamanho do conteúdo */
+    margin: 0 auto;        /* centraliza horizontalmente */
+    background: #008080;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 15px;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background 0.3s ease;
+}
+
+.ctaApoiarProjeto:hover {
+    background: rgba(0, 128, 128, 0.9);
+}
+
+/* Footer */
+footer {
+    background: #0c1721;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+}
+
+.footer-line {
+    margin: 8px 0;
+    color: #999;
+}
+
+.logos img {
+    height: 100px;
+    margin: 0 5px;
+}
+
+.footer-line.apoiar a {
+    color: #ff00cc;
+    text-shadow:
+    0 0 5px #ff00cc,
+    0 0 10px #ff00cc,
+    0 0 20px #ff00cc,
+    0 0 40px #ff00cc;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+.footer-line.apoiar a:hover {
+    text-decoration: underline;
+}
+
+/* Links sociais no rodapé */
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 1px;
+    color: #a9d8f4;
+    text-decoration: none;
+    font-size: 0.95em;
+    margin: 0 0px;
+}
+
+.social-link:hover {
+    text-decoration: underline;
+}
+
+.social-link svg {
+    vertical-align: middle;
+}
+
+.social-label {
+    color: #a9d8f4;
+}
+
+.footer-line.siriusAgradece {
+    color: #a9d8f4;
+    text-shadow:
+    0 0 5px #a9d8f4,
+    0 0 10px #a9d8f4,
+    0 0 20px #a9d8f4,
+    0 0 40px #a9d8f4;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .link-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .link-card img {
+        width: 100%;
+    }
+
+    /* Ajuste para a numeração em telas pequenas: aparece acima da imagem e centralizada */
+    .link-card .numero {
+        margin: 8px 0;
+    }
+
+    .criptoRespo {
+        font-size: clamp(0.68em, 1vw + 0.4em, 1.1em);
+    }
+
+    .span-dados-apoio {
+        font-family: monospace;
+    }
+}
+
+/* Página de Apoio */
+.apoio {
+    padding: 30px 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+.apoio h1 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.apoio p {
+    margin-bottom: 25px;
+    color: #444;
+}
+
+.span-apoio {
+    color: yellow;
+}
+
+.dados-apoio {
+    list-style: none;
+    padding: 0;
+}
+
+.dados-apoio li {
+    background: #f8f8f8;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+    transition: background 0.3s ease;
+}
+
+.dados-apoio li:hover {
+    border: 1px solid white;
+    box-shadow:
+        0 0 5px white,
+        0 0 10px white,
+        0 0 20px white,
+        0 0 40px white;
+}
+
+.strong-dados-apoio {
+    font-size: 1.1em;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.span-dados-apoio {
+    background: #fff;
+    padding: 3px 6px;
+    border-radius: 4px;
+}
+
+.aviso-span-dados-apoio {
+    color: #ff00cc;
+}
+
+.a-dados-apoio {
+    display: inline-block;
+    background: #0c1721;
+    color: #a9d8f4;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background 0.3s ease;
+}
+
+.a-dados-apoio:hover {
+    background: #a9d8f4;
+    color: #0c1721;
+}
+
+.imgQRCode {
+    height: 230px;
+    margin: 0 5px;
+}
