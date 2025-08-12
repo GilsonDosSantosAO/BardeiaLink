@@ -12,6 +12,9 @@
         <link rel="stylesheet" href="css/estilo.css">
     </head>
     <body>
+        <!--Elemento para o fade ao recarregar a página-->
+        <div id="fade-overlay"></div>
+
         <!-- Menu -->
         <header class="menu">
             <a href="index.html" class="logo">
@@ -167,18 +170,33 @@
 
         <!--INÍCIO DO JAVASCRIPT-->
         <script>
-            // Impede o navegador de restaurar a posição anterior
+            const fadeOverlay = document.getElementById("fade-overlay");
+
+            // Impede rolagem automática
             window.history.scrollRestoration = "manual";
 
-            // Sempre que a página carregar, vai para o topo
-            window.onload = function() {
-                window.scrollTo(0, 0);
-            };
+            // Remove âncora da URL
+            if (window.location.hash) {
+                history.replaceState(null, null, window.location.pathname);
+            }
 
-            // Ao atualizar ou sair, garante que volte ao topo
-            window.onbeforeunload = function () {
+            // Ao carregar
+            window.addEventListener("load", () => {
+                // Sempre começa no topo
                 window.scrollTo(0, 0);
-            };
+
+                // Efeito fade-in
+                fadeOverlay.style.opacity = "0";
+                setTimeout(() => {
+                    fadeOverlay.style.display = "none";
+                }, 800);
+            });
+
+            // Ao sair/recarregar
+            window.addEventListener("beforeunload", () => {
+                fadeOverlay.style.display = "block";
+                fadeOverlay.style.opacity = "1";
+            });
         </script>
         <!--FIM DO JAVASCRIPT-->
     </body>
