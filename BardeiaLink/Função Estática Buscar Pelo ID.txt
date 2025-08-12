@@ -1,0 +1,53 @@
+<style>
+    .busca-interna {
+        display: flex;
+        justify-content: center;
+        margin: 20px auto;
+    }
+
+    .busca-interna input {
+        width: 50px; /* largura fixa menor */
+        padding: 5px; /* menos altura */
+        border: 1px solid #ccc;
+        border-radius: 8px 0 0 8px;
+        font-size: 0.9rem; /* texto menor */
+    }
+
+    .busca-interna button {
+        padding: 5px 10px; /* botão mais compacto */
+        border: none;
+        background-color: #0c1721;
+        color: white;
+        border-radius: 0 8px 8px 0;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .busca-interna button:hover {
+        background-color: rgba(12, 23, 33, 0.9);
+    }
+</style>
+
+<div class="busca-interna">
+    <input type="number" id="busca" placeholder="ID">
+    <button onclick="irParaElemento()">Ir</button>
+</div>
+
+<script>
+    function irParaElemento() {
+        const id = document.getElementById('busca').value.trim();
+        const elemento = document.getElementById(id);
+        if (elemento) {
+            elemento.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            alert('Elemento não encontrado!');
+        }
+    }
+
+    // Detecta "Enter" no campo de busca
+    document.getElementById('busca').addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            irParaElemento();
+        }
+    });
+</script>
