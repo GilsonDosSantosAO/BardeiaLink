@@ -165,5 +165,21 @@
             </div>
         </footer>
 
+        <!--INÍCIO DO JAVASCRIPT-->
+        <script>
+            // Impede o navegador de restaurar a posição anterior
+            window.history.scrollRestoration = "manual";
+
+            // Sempre que a página carregar, vai para o topo
+            window.onload = function() {
+                window.scrollTo(0, 0);
+            };
+
+            // Ao atualizar ou sair, garante que volte ao topo
+            window.onbeforeunload = function () {
+                window.scrollTo(0, 0);
+            };
+        </script>
+        <!--FIM DO JAVASCRIPT-->
     </body>
 </html>
