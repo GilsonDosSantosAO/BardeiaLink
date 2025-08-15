@@ -9,6 +9,20 @@
         <title>🚀&nbsp;Página Movida</title>
         
         <style>
+            /* Overlay para o efeito de fade ao recarregar a página */
+            #fade-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: white; /* Pode mudar para a cor do seu fundo */
+                z-index: 9999;
+                opacity: 1;
+                transition: opacity 0.8s ease;
+                pointer-events: none;
+            }
+
             * {
                 margin: 0;
                 padding: 0;
@@ -77,6 +91,9 @@
         </style>
     </head>
     <body>
+        <!--Elemento para o fade ao recarregar a página-->
+        <div id="fade-overlay"></div>
+
         <!-- 🔽 Adiciona a tua logo aqui -->
         <img src="img/logoIconeTextoPreta/Logo Icone Texto Branca Bardeia Link.png" alt="Logo" class="logo" />
 
@@ -85,5 +102,37 @@
         <a class="button" href="https://bardeialink.netlify.app" target="_blank" rel="noopener noreferrer">
             🔗&nbsp;Ir para a nova casa da Bardeia&nbsp;Link
         </a>
+
+        <!--INÍCIO DO JAVASCRIPT-->
+        <script>
+            const fadeOverlay = document.getElementById("fade-overlay");
+
+            // Impede rolagem automática
+            window.history.scrollRestoration = "manual";
+
+            // Remove âncora da URL
+            if (window.location.hash) {
+                history.replaceState(null, null, window.location.pathname);
+            }
+
+            // Ao carregar
+            window.addEventListener("load", () => {
+                // Sempre começa no topo
+                window.scrollTo(0, 0);
+
+                // Efeito fade-in
+                fadeOverlay.style.opacity = "0";
+                setTimeout(() => {
+                    fadeOverlay.style.display = "none";
+                }, 800);
+            });
+
+            // Ao sair/recarregar
+            window.addEventListener("beforeunload", () => {
+                fadeOverlay.style.display = "block";
+                fadeOverlay.style.opacity = "1";
+            });
+        </script>
+        <!--FIM DO JAVASCRIPT-->
     </body>
 </html>
